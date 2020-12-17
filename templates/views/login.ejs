@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <%- include('../partials/header') %>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row w-100 d-flex justify-content-center align-items-center main_div">
+            <div class="col-12 col-md-8 col-xxl-5">
+                <div class ="card py-3 px-2">
+                    <p class="text-center my-3 text-capitalize"><span style="font-size: 200%; font-weight:500;">Connect With Us</span></p>
+                    <div class="division">
+                        <div class="row">
+                            <div class="col-6 mx-auto">
+                                <span class="main_heading" style="margin-left: 1%;">Login Form</span><br><br>
+                            </div>
+                        </div>
+                        <form class="myform" action="/login" method="POST">
+                            <div class="mb-3">                  
+                            <input  type="emailid" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required name="emailid">
+                            </div>
+                             <div class="mb-3">
+                                <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="password" required name="password">
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="">
+                                    <label class="form-check-label" style="margin-left: -45%;">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <button type="submit" class="btn btn-block btn-primary btn-lg" style="margin-left: 10%;">
+                                    <small><i class="fa fa-user pr-5"></i>Login</small>
+                                </button>
+                            </div>
+                            <div class="col-md-10 col-12 bn text-capitalize">
+                               <h4>New user<a href="register" style="margin-left: 5%;">Register here</a></h4>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

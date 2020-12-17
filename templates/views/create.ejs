@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+    <title>Create Post</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row w-100 d-flex justify-content-center align-items-center main_div">
+            <div class="col-12 col-md-8 col-xxl-5">
+                <div class ="card py-3 px-2">
+                    <p class="text-center my-3 text-capitalize"><span style="font-size: 200%; font-weight:500;">Create a New Post</span></p>
+                    <div class="division">
+                       
+                        <form class="myform" action="/home" method="POST">
+                            <div class="mb-3">                  
+                            <input  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title" required name="title">
+                            </div>
+                             <div class="mb-3">
+                                 <textarea name="description" id="description" class="form-control" placeholder="Description" required name="description"></textarea> 
+                            </div>
+                            <div class="my-3">
+                                <button type="submit" class="btn btn-block btn-primary btn-lg" style="margin-left: 2%;">
+                                    <small><i class="fa fa-pencil pr-5"></i>Create</small>
+                                </button>
+                                <a href="home" class="btn btn-danger btn-lg" style="margin-left: 5%;">Cancel</a>
+                                <a href="home" class="btn btn-info btn-lg" style="margin-left: 5%;">Home</a>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

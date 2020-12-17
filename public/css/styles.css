@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+    background-color:#455DF8;
+}
+.card{
+    border:none;
+    border-top: 5px solid #455DF8;
+    color:black;
+}
+.main_div{
+    height:100vh;
+}
+.division{
+    width:100%;
+    text-align: center;
+    margin: 30px auto 20px;
+}
+.division span{
+    font-weight: 500;
+    font-size: 25px;;
+}
+.myform{
+    padding:0 25px 0 35px;
+}
+.form-control{
+    border : 1px solid #455DF8;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.bn a{
+    text-decoration: underline;
+}
+.bn:hover{
+  cursor:pointer;
+}
