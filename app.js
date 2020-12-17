@@ -50,7 +50,7 @@ app.post("/home",async(req,res)=>{
         res.status(201).render('create');
     }catch(e)
     {
-        res.status(400).send(e);
+        res.status(400).send(e); 
     }
 
 })
@@ -62,7 +62,7 @@ app.post("/login",async(req,res)=>{
         const useremail =  await User.findOne({emailid:email})
         if(useremail.password===password)
         {
-            res.status(201).render("home");
+            res.status(201).render("create");
         }
         else{
             res.status(400).send("Invalid Login Details");

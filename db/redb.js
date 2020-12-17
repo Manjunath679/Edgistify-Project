@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/Register',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true
+mongoose.connect('mongodb+srv://manjunath:msmv1234@cluster0.b6x1z.mongodb.net/Register?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true
 }).then(()=>{
     console.log(`connection successful`);
 }).catch((e)=>{
