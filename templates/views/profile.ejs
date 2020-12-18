@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header') %>
+    <title>Profile Verification</title>
+<body style="background-color: white;">
+    <div class="container">
+        <div class="row w-100 d-flex justify-content-center align-items-center main_div">
+            <div class="col-12 col-md-8 col-xxl-5">
+                <div class ="card py-3 px-2">
+                    <p class="text-center my-3 text-capitalize"><span style="font-size: 200%; font-weight:500;">View Your Profile</span></p>
+                    <div class="division">
+                        <form class="myform" action="/profile" method="POST">
+                            <div class="mb-3">                  
+                            <input  type="emailid" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required name="emailid">
+                            </div>
+                            <div class="my-3">
+                                <button type="submit" class="btn btn-block btn-primary btn-lg" style="margin-left: 10%;">
+                                    <small><i class="fa fa-pencil"></i>Check</small>
+                                </button>
+                                <a href="home" class="btn btn-info btn-lg" style="margin-left:5%;"><i class="fa fa-home"></i>Home</a>
+                            </div>
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

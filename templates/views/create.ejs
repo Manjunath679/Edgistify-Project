@@ -12,10 +12,13 @@
                     <p class="text-center my-3 text-capitalize"><span style="font-size: 200%; font-weight:500;">Create a New Post</span></p>
                     <div class="division">
                        
-                        <form class="myform" action="/home" method="POST">
+                        <form class="myform" action="/create" method="POST">
                             <div class="mb-3">                  
                             <input  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title" required name="title">
                             </div>
+                            <div class="mb-3">                  
+                                <input  type="emailid" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required name="emailid">
+                                </div>
                              <div class="mb-3">
                                  <textarea name="description" id="description" class="form-control" placeholder="Description" required name="description"></textarea> 
                             </div>
