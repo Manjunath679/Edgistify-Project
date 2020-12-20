@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const ejs = require('ejs');
+const router = express.Router()
+
+const methodOverride = require('method-override');
+
+
+ app.use('/',router)
 
 require("./db/redb");
 require("./db/homedb");
@@ -16,7 +22,10 @@ const partials_path= path.join(__dirname,"/templates/partials");
 const static_path = path.join(__dirname,"/public");
 // console.log(static_path);
 
+// app.use(app.router);
+// routes.initialize(app);
 
+app.use(methodOverride('_method'))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
@@ -38,18 +47,51 @@ app.get("/register",(req,res)=>{
 app.get("/create",(req,res)=> {
      res.render('create')
 })
-
+app.get("/profile",(req,res)=>{
+    res.render('profile')
+})
 app.get("/home",async(req,res)=>{
     const posts = await Home1.find().sort({"createdAt":-1})
     res.render('home',{posts:posts})
 })
-app.get('/:emailid',async(req,res)=>{
-    const posts = await Home1.find({'emailid':{$in:[req.params.emailid]}})
-    res.render('profile',{posts:posts})
+app.get("/post",(req,res)=>{
+    res.render('post')
 })
-// app.get('/:id',async(req,res)=>{
-//     const posts
-// })
+app.get('/:id',async(req,res)=>{
+    const id = req.params.id;
+    try{
+        const posts = await Home1.find({_id:id});
+    res.render('post',{posts:posts})
+    }catch(e)
+    {
+        res.status(400).send(e);
+    }
+    // res.render('profile',{posts:posts})
+})
+app.delete("/:id",async(req,res)=>{
+    
+    try{
+      await Home1.deleteOne({_id : req.params.id})
+       res.redirect('home');
+    // res.send("deleted Successfully");
+    }catch(e)
+    {
+        res.status(400).send(e);
+    }
+
+})
+app.put("/:id",async(req,res)=>{
+    try{
+        const comments = req.body.comments;
+      //   const posts = await Home1.find({_id:id})
+      await Home1.updateOne({_id:req.params.id},{$push:{comments:comments}},)
+       res.redirect(`${req.params.id}`);
+    }catch(e)
+    {
+        res.status(400).send(e);
+    }
+
+})
 app.post("/profile",async(req,res)=>{
     const email = req.body.emailid;
     const useremail = await User.findOne({emailid:email});
@@ -69,10 +111,8 @@ app.post("/create",async(req,res)=>{
             description : req.body.description,
             emailid: email
         })
-        console.log(`${useremail.emailid}`)
         const homedata1 = await homedata.save();
-        console.log(`${useremail.emailid}`)
-        res.status(201).redirect(`${useremail.emailid}`);
+        res.status(201).redirect('home');
     }
     }catch(e)
     {
@@ -125,6 +165,9 @@ app.post("/register",async(req,res)=>{
         res.status(400).send(e);
     }
 })
+
+
 app.listen(port,()=>{
     console.log(`port is running at ${port}`)
 });
+ module.exports = router;

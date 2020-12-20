@@ -22,6 +22,10 @@
                 <%= Home1.createdAt.toLocaleDateString() %>
             </div>
             <div class="card-text mb-2"><%= Home1.description %></div>
+            <a href="<%= Home1.id%>" class="btn btn-primary">Read More</a>
+            <!-- <form  method="POST" action="/<%= Home1.id%>resource?_method=DELETE"  class="d-inline">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+            </form> -->
         </div>
     </div>
     <% }) %>

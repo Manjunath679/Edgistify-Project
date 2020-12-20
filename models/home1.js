@@ -16,7 +16,8 @@ const home1Schema = new mongoose.Schema({
     createdAt:{
         type: Date,
         default : Date.now
-    }
+    },
+     comments: [String]
 })
 
 const Home1 =  new mongoose.model("Home1",home1Schema);
